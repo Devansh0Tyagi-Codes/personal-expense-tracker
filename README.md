@@ -85,7 +85,11 @@ personal-expense-tracker/
 │   ├── theme.json                      # Power BI clean white/navy/green theme
 │   └── powerbi_dashboard_guide.md      # Step-by-step Power BI Desktop build guide
 ├── docs/
-│   └── project_report.md               # Formal college submission report
+│   ├── project_report.md               # Formal college submission report
+│   └── screenshots/
+│       ├── dashboard_overview.png      # Desktop KPI, alert & charts screenshot
+│       └── dashboard_transactions.png  # Transaction history & filters screenshot
+├── FINAL_SUBMISSION_CHECKLIST.md       # Final submission & manual execution checklist
 ├── .gitignore
 └── README.md
 ```
@@ -179,7 +183,7 @@ python expense_analysis.py --input data/raw_transactions.csv --output-dir powerb
 ```
 
 ### C. Run Oracle SQL & PL/SQL Scripts
-Execute the scripts in order inside Oracle SQL*Plus, SQL Developer, or Oracle Live SQL:
+Execute the scripts in order inside Oracle SQL*Plus, SQL Developer, or Oracle Live SQL (requires an Oracle Database environment):
 ```sql
 @database/schema.sql
 @database/sample_data.sql
@@ -187,7 +191,15 @@ Execute the scripts in order inside Oracle SQL*Plus, SQL Developer, or Oracle Li
 @database/budget_check.sql
 ```
 
-## 13. Results
+## 13. Dashboard Screenshots
+
+### Financial Overview, Budget Alert & Interactive Charts
+![Dashboard Overview](docs/screenshots/dashboard_overview.png)
+
+### Transaction History & Multi-Filter Table
+![Transaction History](docs/screenshots/dashboard_transactions.png)
+
+## 14. Results
 
 Across the 6-month canonical dataset (**June 2026 – November 2026**, `60` cleaned transactions with a monthly budget of **₹35,000.00**):
 
@@ -200,11 +212,11 @@ Across the 6-month canonical dataset (**June 2026 – November 2026**, `60` clea
   - `2026-10` (Oct 2026): ₹36,200.00 (Over by ₹1,200.00)
   - `2026-11` (Nov 2026): ₹37,700.00 (Over by ₹2,700.00)
 
-## 14. Conclusion
+## 15. Conclusion
 
 The project successfully demonstrates an integrated Data Analyst workflow—from interactive client-side expense capture to automated Pandas ETL cleaning, Oracle relational database querying and PL/SQL budget enforcement, and executive BI dashboarding—while maintaining exact numerical consistency across all layers.
 
-## 15. Future Scope
+## 16. Future Scope
 
 - Connect the frontend directly to a REST API backend (Flask/FastAPI) backed by Oracle Database for multi-user persistence.
 - Add recurring transaction scheduling and automated bank/UPI statement PDF/CSV parsing.
