@@ -1,0 +1,7 @@
+year_month,month_name,total_income,total_expenses,total_savings,savings_rate_pct,monthly_budget,budget_variance,budget_status,mom_expense_change
+2026-06,Jun 2026,52500.0,31500.0,21000.0,40.0,35000.0,3500.0,Within Budget,0.0
+2026-07,Jul 2026,48200.0,33050.0,15150.0,31.43,35000.0,1950.0,Within Budget,1550.0
+2026-08,Aug 2026,54500.0,36450.0,18050.0,33.12,35000.0,-1450.0,Exceeded,3400.0
+2026-09,Sep 2026,50500.0,29600.0,20900.0,41.39,35000.0,5400.0,Within Budget,-6850.0
+2026-10,Oct 2026,59000.0,36200.0,22800.0,38.64,35000.0,-1200.0,Exceeded,6600.0
+2026-11,Nov 2026,56500.0,37700.0,18800.0,33.27,35000.0,-2700.0,Exceeded,1500.0

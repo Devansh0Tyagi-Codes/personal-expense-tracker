@@ -1,0 +1,61 @@
+transaction_id,date,year_month,month_name,type,category,description,amount
+TX-1001,2026-06-01,2026-06,Jun 2026,Income,Salary,Monthly Salary Credit,45000.0
+TX-1002,2026-06-02,2026-06,Jun 2026,Expense,Housing & Rent,Apartment Monthly Rent,12000.0
+TX-1003,2026-06-05,2026-06,Jun 2026,Expense,Utilities & Bills,"Electricity, Water & Fiber Internet",3100.0
+TX-1004,2026-06-08,2026-06,Jun 2026,Expense,Food & Dining,Monthly Groceries & Fresh Produce,5400.0
+TX-1005,2026-06-11,2026-06,Jun 2026,Expense,Transportation,Metro Pass & Fuel Refill,2200.0
+TX-1006,2026-06-14,2026-06,Jun 2026,Income,Freelance,Data Cleaning Analytics Project,7500.0
+TX-1007,2026-06-17,2026-06,Jun 2026,Expense,Education,SQL & Python Reference Books,2500.0
+TX-1008,2026-06-21,2026-06,Jun 2026,Expense,Shopping,Summer Apparel & Essentials,3800.0
+TX-1009,2026-06-24,2026-06,Jun 2026,Expense,Healthcare,Pharmacy & Dental Checkup,900.0
+TX-1010,2026-06-28,2026-06,Jun 2026,Expense,Entertainment,Cinema Tickets & Weekend Dining,1600.0
+TX-1011,2026-07-01,2026-07,Jul 2026,Income,Salary,Monthly Salary Credit,45000.0
+TX-1012,2026-07-02,2026-07,Jul 2026,Expense,Housing & Rent,Apartment Monthly Rent,12000.0
+TX-1013,2026-07-05,2026-07,Jul 2026,Expense,Utilities & Bills,"Electricity, Gas & Mobile Plan",3400.0
+TX-1014,2026-07-09,2026-07,Jul 2026,Expense,Food & Dining,Groceries & Lunch Meals,5850.0
+TX-1015,2026-07-12,2026-07,Jul 2026,Expense,Transportation,Cab Rides & Commute Card,2450.0
+TX-1016,2026-07-15,2026-07,Jul 2026,Income,Investment,Mutual Fund Quarterly Dividend,3200.0
+TX-1017,2026-07-18,2026-07,Jul 2026,Expense,Education,Power BI Workshop Registration,1800.0
+TX-1018,2026-07-22,2026-07,Jul 2026,Expense,Shopping,Home Desk Accessories,4200.0
+TX-1019,2026-07-25,2026-07,Jul 2026,Expense,Healthcare,Annual Blood Panel & Vitamins,1450.0
+TX-1020,2026-07-29,2026-07,Jul 2026,Expense,Entertainment,Streaming Subscriptions & Bowling,1900.0
+TX-1021,2026-08-01,2026-08,Aug 2026,Income,Salary,Monthly Salary Credit,45000.0
+TX-1022,2026-08-02,2026-08,Aug 2026,Expense,Housing & Rent,Apartment Monthly Rent,12000.0
+TX-1023,2026-08-06,2026-08,Aug 2026,Expense,Utilities & Bills,"Electricity, Internet & Maintenance",3250.0
+TX-1024,2026-08-09,2026-08,Aug 2026,Expense,Food & Dining,Supermarket & Family Dinner,6100.0
+TX-1025,2026-08-12,2026-08,Aug 2026,Expense,Transportation,Intercity Train & Local Transit,2600.0
+TX-1026,2026-08-15,2026-08,Aug 2026,Income,Freelance,Dashboard Reporting Consulting,9500.0
+TX-1027,2026-08-19,2026-08,Aug 2026,Expense,Education,College Semester Lab & Certification,3600.0
+TX-1028,2026-08-22,2026-08,Aug 2026,Expense,Shopping,Running Shoes & Backpack,5500.0
+TX-1029,2026-08-26,2026-08,Aug 2026,Expense,Healthcare,Eye Examination & Prescriptions,1200.0
+TX-1030,2026-08-30,2026-08,Aug 2026,Expense,Entertainment,Concert Pass & Outing,2200.0
+TX-1031,2026-09-01,2026-09,Sep 2026,Income,Salary,Monthly Salary Credit (Revised),48000.0
+TX-1032,2026-09-02,2026-09,Sep 2026,Expense,Housing & Rent,Apartment Monthly Rent,12000.0
+TX-1033,2026-09-05,2026-09,Sep 2026,Expense,Utilities & Bills,"Electricity, Water & Broadband",2950.0
+TX-1034,2026-09-08,2026-09,Sep 2026,Expense,Food & Dining,Monthly Groceries & Cafe,5200.0
+TX-1035,2026-09-12,2026-09,Sep 2026,Expense,Transportation,Metro Card & Bike Servicing,2100.0
+TX-1036,2026-09-16,2026-09,Sep 2026,Income,Other Income,Cashback & Tax Refund Credit,2500.0
+TX-1037,2026-09-19,2026-09,Sep 2026,Expense,Education,Data Structures Online Course,2200.0
+TX-1038,2026-09-22,2026-09,Sep 2026,Expense,Shopping,Kitchen Utensils & Supplies,2900.0
+TX-1039,2026-09-25,2026-09,Sep 2026,Expense,Healthcare,General Clinic Visit,850.0
+TX-1040,2026-09-28,2026-09,Sep 2026,Expense,Entertainment,Movie Night & Books,1400.0
+TX-1041,2026-10-01,2026-10,Oct 2026,Income,Salary,Monthly Salary Credit,48000.0
+TX-1042,2026-10-02,2026-10,Oct 2026,Expense,Housing & Rent,Apartment Monthly Rent,12000.0
+TX-1043,2026-10-05,2026-10,Oct 2026,Expense,Utilities & Bills,"Electricity, Gas & Mobile",3300.0
+TX-1044,2026-10-09,2026-10,Oct 2026,Expense,Food & Dining,Festive Groceries & Dining Out,6300.0
+TX-1045,2026-10-13,2026-10,Oct 2026,Expense,Transportation,Holiday Travel & Fuel,2800.0
+TX-1046,2026-10-16,2026-10,Oct 2026,Income,Freelance,SQL Database Optimization Gig,11000.0
+TX-1047,2026-10-19,2026-10,Oct 2026,Expense,Education,Cloud Computing Exam Prep,2000.0
+TX-1048,2026-10-23,2026-10,Oct 2026,Expense,Shopping,Festive Gifts & Clothing,6200.0
+TX-1049,2026-10-26,2026-10,Oct 2026,Expense,Healthcare,Wellness Medicines,1100.0
+TX-1050,2026-10-30,2026-10,Oct 2026,Expense,Entertainment,Event Tickets & Dinner,2500.0
+TX-1051,2026-11-01,2026-11,Nov 2026,Income,Salary,Monthly Salary Credit,48000.0
+TX-1052,2026-11-02,2026-11,Nov 2026,Expense,Housing & Rent,Apartment Monthly Rent,12000.0
+TX-1053,2026-11-05,2026-11,Nov 2026,Expense,Utilities & Bills,Winter Heater Electricity & Fiber,3550.0
+TX-1054,2026-11-08,2026-11,Nov 2026,Expense,Food & Dining,Monthly Groceries & Meal Prep,6450.0
+TX-1055,2026-11-11,2026-11,Nov 2026,Expense,Transportation,Fuel & Airport Cab Ride,2750.0
+TX-1056,2026-11-14,2026-11,Nov 2026,Income,Freelance,Python ETL Script Deliverable,8500.0
+TX-1057,2026-11-17,2026-11,Nov 2026,Expense,Education,Analytics Project Binding & Cloud,2900.0
+TX-1058,2026-11-20,2026-11,Nov 2026,Expense,Shopping,Winter Jacket & Headphones,5800.0
+TX-1059,2026-11-23,2026-11,Nov 2026,Expense,Healthcare,Physiotherapy & Pharmacy,1850.0
+TX-1060,2026-11-25,2026-11,Nov 2026,Expense,Entertainment,Weekend Movie & Museum Pass,2400.0

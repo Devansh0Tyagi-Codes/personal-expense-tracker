@@ -1,0 +1,9 @@
+category,transaction_count,total_amount,avg_amount,share_pct
+Housing & Rent,6,72000.0,12000.0,35.21
+Food & Dining,6,35300.0,5883.33,17.26
+Shopping,6,28400.0,4733.33,13.89
+Utilities & Bills,6,19550.0,3258.33,9.56
+Education,6,15000.0,2500.0,7.33
+Transportation,6,14900.0,2483.33,7.29
+Entertainment,6,12000.0,2000.0,5.87
+Healthcare,6,7350.0,1225.0,3.59

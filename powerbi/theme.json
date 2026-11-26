@@ -1,0 +1,55 @@
+{
+  "name": "Personal Finance Clean Navy & Green",
+  "dataColors": [
+    "#16A34A",
+    "#0F172A",
+    "#22C55E",
+    "#1E3A8A",
+    "#334155",
+    "#15803D",
+    "#64748B",
+    "#86EFAC"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#0F172A",
+  "tableAccent": "#16A34A",
+  "good": "#16A34A",
+  "neutral": "#B45309",
+  "bad": "#DC2626",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#FFFFFF" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#E2E8F0" } },
+            "radius": 8
+          }
+        ],
+        "title": [
+          {
+            "fontColor": { "solid": { "color": "#0F172A" } },
+            "fontSize": 13,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#F8FAFC" } },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

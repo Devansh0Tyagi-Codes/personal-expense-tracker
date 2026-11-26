@@ -1,0 +1,54 @@
+// ============================================================================
+// Power BI DAX Measures - Personal Expense Tracker & Budget Dashboard
+// Import cleaned_transactions.csv and budget_targets.csv before creating
+// these measures inside the cleaned_transactions table (or a Measures table).
+// ============================================================================
+
+Total Income =
+CALCULATE(
+    SUM(cleaned_transactions[amount]),
+    cleaned_transactions[type] = "Income"
+)
+
+Total Expenses =
+CALCULATE(
+    SUM(cleaned_transactions[amount]),
+    cleaned_transactions[type] = "Expense"
+)
+
+Total Savings =
+[Total Income] - [Total Expenses]
+
+Savings Rate % =
+DIVIDE([Total Savings], [Total Income], 0)
+
+Monthly Budget Limit =
+SUM(budget_targets[budget_limit])
+
+Budget Variance =
+[Monthly Budget Limit] - [Total Expenses]
+
+Budget Utilization % =
+DIVIDE([Total Expenses], [Monthly Budget Limit], 0)
+
+Budget Status =
+IF(
+    [Total Expenses] > [Monthly Budget Limit],
+    "Exceeded",
+    IF([Budget Utilization %] >= 0.80, "Near Limit", "Within Budget")
+)
+
+Expense Transaction Count =
+CALCULATE(
+    COUNTROWS(cleaned_transactions),
+    cleaned_transactions[type] = "Expense"
+)
+
+Average Expense Amount =
+CALCULATE(
+    AVERAGE(cleaned_transactions[amount]),
+    cleaned_transactions[type] = "Expense"
+)
+
+Monthly Spending Color =
+IF([Total Expenses] > [Monthly Budget Limit], "#DC2626", "#16A34A")
