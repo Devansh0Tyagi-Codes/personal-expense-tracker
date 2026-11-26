@@ -1,7 +1,7 @@
 // ============================================================================
 // Power BI DAX Measures - Personal Expense Tracker & Budget Dashboard
-// Import cleaned_transactions.csv and budget_targets.csv before creating
-// these measures inside the cleaned_transactions table (or a Measures table).
+// Applied to table: cleaned_transactions
+// Relationship: budget_targets[budget_month] (1) -> cleaned_transactions[year_month] (*)
 // ============================================================================
 
 Total Income =
@@ -22,33 +22,35 @@ Total Savings =
 Savings Rate % =
 DIVIDE([Total Savings], [Total Income], 0)
 
-Monthly Budget Limit =
-SUM(budget_targets[budget_limit])
+Monthly Budget =
+AVERAGE(budget_targets[budget_limit])
 
 Budget Variance =
-[Monthly Budget Limit] - [Total Expenses]
+SUMX(
+    VALUES(budget_targets[budget_month]),
+    CALCULATE(MAX(budget_targets[budget_limit]))
+) - [Total Expenses]
 
 Budget Utilization % =
-DIVIDE([Total Expenses], [Monthly Budget Limit], 0)
+DIVIDE(
+    [Total Expenses],
+    SUMX(
+        VALUES(budget_targets[budget_month]),
+        CALCULATE(MAX(budget_targets[budget_limit]))
+    ),
+    0
+)
 
 Budget Status =
+VAR PeriodBudget =
+    SUMX(
+        VALUES(budget_targets[budget_month]),
+        CALCULATE(MAX(budget_targets[budget_limit]))
+    )
+VAR Ratio = DIVIDE([Total Expenses], PeriodBudget, 0)
+RETURN
 IF(
-    [Total Expenses] > [Monthly Budget Limit],
+    [Total Expenses] > PeriodBudget,
     "Exceeded",
-    IF([Budget Utilization %] >= 0.80, "Near Limit", "Within Budget")
+    IF(Ratio >= 0.80, "Near Limit", "Within Budget")
 )
-
-Expense Transaction Count =
-CALCULATE(
-    COUNTROWS(cleaned_transactions),
-    cleaned_transactions[type] = "Expense"
-)
-
-Average Expense Amount =
-CALCULATE(
-    AVERAGE(cleaned_transactions[amount]),
-    cleaned_transactions[type] = "Expense"
-)
-
-Monthly Spending Color =
-IF([Total Expenses] > [Monthly Budget Limit], "#DC2626", "#16A34A")

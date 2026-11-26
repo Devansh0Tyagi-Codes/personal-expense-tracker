@@ -44,32 +44,32 @@ This folder contains the cleaned CSV datasets, DAX measures, and custom theme fi
 
 ## 3. Required Data Model Relationships
 
-Open **Model View** and create the following relationship:
+Open **Model View** and verify the active relationship:
 
-- **From Table:** `budget_targets` (`budget_month`)
-- **To Table:** `cleaned_transactions` (`year_month`)
+- **From Table:** `budget_targets` (`budget_month`, Date)
+- **To Table:** `cleaned_transactions` (`year_month`, Date)
 - **Cardinality:** One-to-Many (`1 : *`)
 - **Cross-filter direction:** Single (`budget_targets` filters `cleaned_transactions`)
 - **Make this relationship active:** Checked
 
-*(If you also imported `monthly_summary.csv`, link `budget_targets[budget_month]` `1 : 1` to `monthly_summary[year_month]`.)*
+*(Note: Avoid linking `budget_targets[year_month]` (`Text`) to `cleaned_transactions[year_month]` (`Date`), as mismatched data types cause blank expense values across months.)*
 
 ---
 
 ## 4. Create DAX Measures
 
-In **Report View** or **Data View**, right-click `cleaned_transactions` -> **New measure** and add each measure from [`dax_measures.dax`](./dax_measures.dax):
+In **Report View** or **Data View**, inside `cleaned_transactions`, verify/create each measure from [`dax_measures.dax`](./dax_measures.dax):
 
 - `Total Income` (`₹321,200.00` expected across all months)
 - `Total Expenses` (`₹204,500.00` expected across all months)
 - `Total Savings` (`₹116,700.00` expected across all months)
 - `Savings Rate %` (`36.33%` expected; format as Percentage with 2 decimals)
-- `Monthly Budget Limit` (`₹35,000.00` per month / `₹210,000.00` cumulative)
-- `Budget Variance`
-- `Budget Utilization %`
-- `Budget Status`
+- `Monthly Budget` (`₹35,000.00` per month using `AVERAGE(budget_targets[budget_limit])` so KPI cards do not multiply across transactions)
+- `Budget Variance` (`+₹5,500.00` overall; per-month values match `monthly_summary.csv`)
+- `Budget Utilization %` (`97.38%` overall)
+- `Budget Status` (`Exceeded`, `Near Limit`, `Within Budget`)
 
-Format all currency measures as **₹ Indian Rupee (or Currency, 2 decimal places)**.
+Format all currency measures as **₹#,##0.00** (Indian Rupee / Currency, 2 decimal places).
 
 ---
 
@@ -94,27 +94,27 @@ Arrange the 16:9 canvas cleanly into three horizontal bands:
 1. **Card 1 — Total Income:** Field = `[Total Income]` (Accent color: `#16A34A`)
 2. **Card 2 — Total Expenses:** Field = `[Total Expenses]` (Accent color: `#0F172A`)
 3. **Card 3 — Total Savings:** Field = `[Total Savings]`, Callout + Subtitle/Detail = `[Savings Rate %]`
-4. **Card 4 — Budget Status:** Field = `[Monthly Budget Limit]` or `[Budget Status]`
+4. **Card 4 — Monthly Budget:** Field = `[Monthly Budget]` (or pair with `[Budget Status]`)
 
 ### Band 3: Analytical Charts (Bottom 70% of canvas)
-1. **Monthly Spending Line Chart** *(Top-Left / Left half)*:
-   - Visual: **Line chart**
+1. **Monthly Spending vs. Budget Chart** *(Top-Left / Left half)*:
+   - Visual: **Line chart** (or **Line and clustered column chart**)
    - X-axis: `budget_targets[month_name]`
-   - Y-axis: `[Total Expenses]` (Solid Green `#16A34A` or Navy `#0F172A`) and `[Monthly Budget Limit]` (Dashed Red `#DC2626` target line)
+   - Y-axis: `[Total Expenses]` (Solid Green `#16A34A` or Navy `#0F172A`) and `[Monthly Budget]` (Dashed Red `#DC2626` target line)
    - Turn **Data labels** On.
-2. **Category-Wise Expense Pie Chart** *(Top-Right)*:
-   - Visual: **Pie chart** (or **Donut chart**)
+2. **Category-Wise Expense Donut Chart** *(Top-Right)*:
+   - Visual: **Donut chart**
    - Legend: `cleaned_transactions[category]`
    - Values: `[Total Expenses]`
    - Detail labels: Category + Percent of total (`Housing & Rent` should be `35.21%`).
-3. **Income vs. Expense Bar Chart** *(Bottom-Left / Full-width or paired)*:
+3. **Monthly Income vs. Expenses Column Chart** *(Bottom-Left)*:
    - Visual: **Clustered column chart**
    - X-axis: `budget_targets[month_name]`
    - Y-axis: `[Total Income]` (`#16A34A` Green) and `[Total Expenses]` (`#0F172A` Dark Navy)
-4. **Monthly Audit Table** *(Bottom-Right)*:
+4. **Transaction Category Table** *(Bottom-Right)*:
    - Visual: **Table**
-   - Columns: `budget_targets[month_name]`, `[Total Income]`, `[Total Expenses]`, `[Total Savings]`, `[Budget Status]`
-   - Apply **Conditional Formatting -> Background Color** on `[Budget Status]` (`Exceeded` = soft red `#FEE2E2`, `Within Budget` = soft green `#DCFCE7`).
+   - Columns: `cleaned_transactions[category]`, `[Total Expenses]`, `[Total Income]`, or `budget_targets[month_name]`, `[Total Expenses]`, `[Budget Variance]`, `[Budget Status]`
+   - Apply **Conditional Formatting -> Background Color** on `[Budget Status]` (`Exceeded` = soft red `#FEE2E2`, `Near Limit` = soft amber `#FEF3C7`, `Within Budget` = soft green `#DCFCE7`).
 
 ---
 

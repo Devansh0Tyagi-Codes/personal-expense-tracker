@@ -44,20 +44,22 @@
 - [x] `database/budget_check.sql` — PL/SQL stored procedure `check_monthly_budget(p_month)` with `DBMS_OUTPUT` warning alerts and loop execution block.
 
 ### Power BI Resources (`powerbi/`)
+- [x] `powerbi/Personal_Expense_Tracker_Complete.pbix` — Completed 1-page Power BI Desktop report (12 visuals, 8 formatted DAX measures, fixed `budget_month` -> `year_month` relationship, `theme.json` applied, saved via Power BI Desktop and reopen-verified).
 - [x] `powerbi/cleaned_transactions.csv` (`60` rows)
 - [x] `powerbi/budget_targets.csv` (`6` rows)
 - [x] `powerbi/monthly_summary.csv` (`6` rows)
 - [x] `powerbi/category_summary.csv` (`8` categories)
 - [x] `powerbi/monthly_category_breakdown.csv`
-- [x] `powerbi/dax_measures.dax` — `Total Income`, `Total Expenses`, `Total Savings`, `Savings Rate %`, `Monthly Budget Limit`, `Budget Variance`, `Budget Utilization %`, `Budget Status`, etc.
+- [x] `powerbi/dax_measures.dax` — `Total Income`, `Total Expenses`, `Total Savings`, `Savings Rate %`, `Monthly Budget`, `Budget Variance`, `Budget Utilization %`, `Budget Status`.
 - [x] `powerbi/theme.json` — Clean white, dark navy, and green Power BI theme.
-- [x] `powerbi/powerbi_dashboard_guide.md` — Exact import, relationship, DAX, visual layout, and `.pbix` save instructions.
+- [x] `powerbi/powerbi_dashboard_guide.md` — Reference build guide aligned with the model.
 
 ### Documentation & Screenshots (`README.md`, `docs/`)
 - [x] `README.md` — Complete project overview, architecture, methodology, setup, results, screenshots, and future scope.
 - [x] `docs/project_report.md` — Formal college submission report.
 - [x] `docs/screenshots/dashboard_overview.png` — 1440×900 desktop overview capture.
 - [x] `docs/screenshots/dashboard_transactions.png` — 1440×900 Transaction History table capture.
+- [x] `docs/screenshots/powerbi_dashboard.png` — Reopened Power BI Desktop dashboard capture.
 
 ---
 
@@ -89,13 +91,6 @@ Because **Oracle Database** and **Microsoft Power BI Desktop** are not installed
    ```
 3. Confirm `budget_check.sql` prints `WARNING: Budget limit EXCEEDED` for `2026-08`, `2026-10`, and `2026-11`, and `STATUS OK` / `CAUTION` for `2026-06`, `2026-07`, and `2026-09`.
 
-### B. Microsoft Power BI Desktop (`.pbix` Creation)
-*(No fake `.pbix` binary was created; all datasets, DAX, theme, and instructions are ready in `powerbi/`.)*
-1. Open **Microsoft Power BI Desktop** on Windows.
-2. Follow [`powerbi/powerbi_dashboard_guide.md`](powerbi/powerbi_dashboard_guide.md):
-   - Import `powerbi/cleaned_transactions.csv` and `powerbi/budget_targets.csv` via **Get Data -> Text/CSV**.
-   - Create the `1 : *` relationship (`budget_targets[budget_month]` -> `cleaned_transactions[year_month]`).
-   - Add the DAX measures from `powerbi/dax_measures.dax`.
-   - Apply `powerbi/theme.json` (**View -> Themes -> Browse for themes**).
-   - Build the 4 KPI cards, Monthly Spending Line Chart, Category-Wise Expense Pie Chart, Income vs. Expense Column Chart, and Monthly Audit Table.
-3. Save the report as `powerbi/Personal_Expense_Tracker.pbix`.
+### B. Power BI Desktop (`Personal_Expense_Tracker_Complete.pbix` vs. `Personal_Expense_Tracker.pbix`)
+- **Automated & Verified:** The complete 12-visual dashboard, fixed `budget_month` → `year_month` relationship, all 8 formatted DAX measures, and `theme.json` have been built, saved via Power BI Desktop, and verified by reopening **`powerbi/Personal_Expense_Tracker_Complete.pbix`** (with live ADOMD model & slicer query checks matching Python CSVs).
+- **Remaining File-Lock Note:** `powerbi/Personal_Expense_Tracker.pbix` was held under an exclusive OS file lock (`Errno 13: Permission denied`) by the already-open `PBIDesktop.exe` (`PID 24100`). To replace that filename, close that open Power BI Desktop window without saving and rename `Personal_Expense_Tracker_Complete.pbix` to `Personal_Expense_Tracker.pbix` (or open `Personal_Expense_Tracker_Complete.pbix` directly).
