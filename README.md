@@ -76,7 +76,7 @@ personal-expense-tracker/
 │   ├── queries.sql                     # KPI, category, and monthly analytical queries
 │   └── budget_check.sql                # PL/SQL procedure check_monthly_budget
 ├── powerbi/
-│   ├── Personal_Expense_Tracker_Complete.pbix # Completed & verified Power BI report (12 visuals)
+│   ├── Personal_Expense_Tracker.pbix   # Completed & verified Power BI report (12 visuals)
 │   ├── cleaned_transactions.csv        # Exported fact table (60 rows)
 │   ├── budget_targets.csv              # Exported monthly budget targets (6 rows)
 │   ├── monthly_summary.csv             # Exported monthly KPI summary (6 rows)
@@ -150,7 +150,7 @@ A PL/SQL stored procedure `check_monthly_budget(p_month)` in `database/budget_ch
 ## 10. Power BI Dashboard Details
 
 All Power BI resources are stored in [`powerbi/`](./powerbi/):
-- **Report File**: [`powerbi/Personal_Expense_Tracker_Complete.pbix`](./powerbi/Personal_Expense_Tracker_Complete.pbix) (saved and reopen-verified in Power BI Desktop `2.160.776.0`).
+- **Report File**: [`powerbi/Personal_Expense_Tracker.pbix`](./powerbi/Personal_Expense_Tracker.pbix) (saved and reopen-verified in Power BI Desktop `2.160.776.0`).
 - **Data Model**: One-to-many (`1:*`) single-direction relationship from `budget_targets[budget_month]` to `cleaned_transactions[year_month]`, with 8 formatted DAX measures (`Total Income`, `Total Expenses`, `Total Savings`, `Savings Rate %`, `Monthly Budget`, `Budget Variance`, `Budget Utilization %`, `Budget Status`).
 - **Visuals**: Title header, Month & Category dropdown slicers, 5 KPI Cards, Monthly Income vs. Expenses Clustered Column Chart, Monthly Expenses vs. Budget Line Chart, Category-Wise Expenses Donut Chart, and Category & Cashflow Summary Table styled with [`powerbi/theme.json`](./powerbi/theme.json).
 

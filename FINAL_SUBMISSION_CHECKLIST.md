@@ -44,7 +44,7 @@
 - [x] `database/budget_check.sql` — PL/SQL stored procedure `check_monthly_budget(p_month)` with `DBMS_OUTPUT` warning alerts and loop execution block.
 
 ### Power BI Resources (`powerbi/`)
-- [x] `powerbi/Personal_Expense_Tracker_Complete.pbix` — Completed 1-page Power BI Desktop report (12 visuals, 8 formatted DAX measures, fixed `budget_month` -> `year_month` relationship, `theme.json` applied, saved via Power BI Desktop and reopen-verified).
+- [x] `powerbi/Personal_Expense_Tracker.pbix` — Completed 1-page Power BI Desktop report (12 visuals, 8 formatted DAX measures, fixed `budget_month` -> `year_month` relationship, `theme.json` applied, saved via Power BI Desktop and reopen-verified).
 - [x] `powerbi/cleaned_transactions.csv` (`60` rows)
 - [x] `powerbi/budget_targets.csv` (`6` rows)
 - [x] `powerbi/monthly_summary.csv` (`6` rows)
@@ -91,6 +91,5 @@ Because **Oracle Database** and **Microsoft Power BI Desktop** are not installed
    ```
 3. Confirm `budget_check.sql` prints `WARNING: Budget limit EXCEEDED` for `2026-08`, `2026-10`, and `2026-11`, and `STATUS OK` / `CAUTION` for `2026-06`, `2026-07`, and `2026-09`.
 
-### B. Power BI Desktop (`Personal_Expense_Tracker_Complete.pbix` vs. `Personal_Expense_Tracker.pbix`)
-- **Automated & Verified:** The complete 12-visual dashboard, fixed `budget_month` → `year_month` relationship, all 8 formatted DAX measures, and `theme.json` have been built, saved via Power BI Desktop, and verified by reopening **`powerbi/Personal_Expense_Tracker_Complete.pbix`** (with live ADOMD model & slicer query checks matching Python CSVs).
-- **Remaining File-Lock Note:** `powerbi/Personal_Expense_Tracker.pbix` was held under an exclusive OS file lock (`Errno 13: Permission denied`) by the already-open `PBIDesktop.exe` (`PID 24100`). To replace that filename, close that open Power BI Desktop window without saving and rename `Personal_Expense_Tracker_Complete.pbix` to `Personal_Expense_Tracker.pbix` (or open `Personal_Expense_Tracker_Complete.pbix` directly).
+### B. Power BI Desktop (`powerbi/Personal_Expense_Tracker.pbix`)
+- **Automated & Verified:** The complete 12-visual dashboard, fixed `budget_month` → `year_month` relationship, all 8 formatted DAX measures, and `theme.json` have been built, saved via Power BI Desktop, and verified by reopening **`powerbi/Personal_Expense_Tracker.pbix`** (with live ADOMD model & slicer query checks matching Python CSVs). No manual Power BI Desktop steps remain.
